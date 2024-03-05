@@ -1,0 +1,48 @@
+//bridge-file-version: #0
+{
+	"format_version": [
+		1,
+		0,
+		0
+	],
+	"betterbedrock:ruby_ore": {
+		"textures": "ruby_ore",
+		"sound": "stone"
+	},
+	"betterbedrock:ruby_block": {
+		"textures": "ruby_block",
+		"sound": "stone"
+	},
+	"betterbedrock:copper_ore": {
+		"textures": "copper_ore",
+		"sound": "stone"
+	},
+	"betterbedrock:copper_block": {
+		"textures": "copper_block",
+		"sound": "stone"
+	},
+	"betterbedrock:nether_gold_ore": {
+		"textures": "nether_gold_ore",
+		"sound": "stone"
+	},
+    "betterbedrock:quicksand": {
+		"textures": "quicksand",
+		"sound": "sand"
+	},
+	"betterbedrock:mud_block": {
+		"textures": "mud_block",
+		"sound": "gravel"
+	},
+	"betterbedrock:hardstone": {
+		"textures": "hardstone",
+		"sound": "stone"
+	},
+    "betterbedrock:spiky_block": {
+        "textures": {
+            "up": "spiky_block_top",
+            "down": "spiky_block_side",
+            "side": "spiky_block_side"
+        },
+        "sound": "stone"
+    }
+}

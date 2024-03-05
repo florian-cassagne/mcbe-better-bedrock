@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "betterbedrock:spiky_block_copper"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " I ",
+      "III",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:cobblestone"
+      },
+      "I": {
+        "item": "betterbedrock:copper_ingot"
+      }
+    },
+    "result": {
+      "item": "betterbedrock:spiky_block"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "betterbedrock:gen_stalagmite",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+        
+/////////////////////////////////////
+        
+		"component_groups": {
+            
+            "minecraft:big_stalagmite": {
+				"minecraft:scale": {
+					"value": 1.1
+				},
+            "minecraft:health": {
+                "value": 9, // D= 20
+                "max": 9 // D= 20
+              },
+			"minecraft:loot": {
+				"table": "loot_tables/entities/non_mobs/big_stalagmite.json"
+			    }
+			},
+            
+            "minecraft:medium_stalagmite": {
+				"minecraft:scale": {
+					"value": 0.8
+				},
+            "minecraft:health": {
+                "value": 7, // D= 20
+                "max": 7 // D= 20
+              },
+			"minecraft:loot": {
+				"table": "loot_tables/entities/non_mobs/medium_stalagmite.json"
+			    }
+			},
+            "minecraft:small_stalagmite": {
+				"minecraft:scale": {
+					"value": 0.5
+				},
+            "minecraft:health": {
+                "value": 5, // D= 20
+                "max": 5 // D= 20
+              },
+			"minecraft:loot": {
+				"table": "loot_tables/entities/non_mobs/small_stalagmite.json"
+			    }
+			}
+            
+    },
+    
+/////////////////////////////////////        
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"non_mob", "stalagmite"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.7,
+				"height": 2.5
+			},
+			"minecraft:movement": {
+				"value": 0.0
+			},
+              "minecraft:health": {
+                "value": 9, // D= 20
+                "max": 9 // D= 20
+              },
+              "minecraft:fall_damage": {
+                "value": 0.0
+              },
+              "minecraft:knockback_resistance": {
+                "value": 1 
+              },
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0,
+				"breathesAir": true,
+				"breathesWater": true,
+                "breathesLava": false,
+                "breathesSolids": false
+			},
+			"minecraft:nameable": {
+				"alwaysShow": false,
+				"allowNameTagRenaming": false
+			},
+			"minecraft:physics": {}
+            
+		},
+        
+ /////////////////////////////////////       
+        
+        
+		"events": {
+            "minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 10,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:big_stalagmite"
+							]
+						}
+					},
+					{
+						"weight": 14,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:medium_stalagmite"
+							]
+						}
+					},
+                    {
+						"weight": 16,
+						"remove": {},
+						"add": {
+							"component_groups": [
+								"minecraft:small_stalagmite"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

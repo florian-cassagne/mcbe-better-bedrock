@@ -1,0 +1,1 @@
+effect @s invisibility 999999 1 true

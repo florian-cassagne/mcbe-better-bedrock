@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "betterbedrock:furnace_mud_to_dirt"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace"],
+    "input": "betterbedrock:mud_block",
+    "output": "minecraft:dirt"
+  }
+  
+}

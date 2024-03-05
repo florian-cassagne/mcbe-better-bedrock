@@ -1,0 +1,18 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "mud_lake_river_feature"
+    },
+    "count": 60,
+    "places_block": "betterbedrock:mud_block",
+    "may_replace": [
+      {
+        "name": "minecraft:dirt",
+        "states": {
+          "dirt_type": "normal"
+        }
+      }
+    ]
+  }
+}

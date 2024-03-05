@@ -1,0 +1,20 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/quicksand_anim",
+    "atlas_tile": "quicksand",
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+    "ticks_per_frame": 40
+  },
+  {
+    "flipbook_texture": "textures/blocks/mud_block_anim",
+    "atlas_tile": "mud_block",
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ],
+    "ticks_per_frame": 80
+  },
+  {
+    "flipbook_texture": "textures/blocks/spiky_block_top",
+    "atlas_tile": "spiky_block_top",
+    "frames": [ 0, 1 ],
+    "ticks_per_frame": 15
+  }
+]

@@ -1,0 +1,14 @@
+
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "betterbedrock:copper_axe",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "copper_axe",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

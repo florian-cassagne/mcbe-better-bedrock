@@ -1,0 +1,1217 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"scripts": {
+            // ---- Added ----
+				"animate": [
+					"walk",
+					"light_source_very_high",
+					"light_source_high",
+                    "light_source_medium",
+                    "light_source_low",
+                    "no_light_source",
+                    "torch",
+                    "attack"
+				]
+			},
+            // ---- Added ----
+			"animations": {
+				"walk": "controller.animation.walk",
+				"light_source_very_high": "controller.animation.light_source_very_high",
+				"light_source_high": "controller.animation.light_source_high",
+				"light_source_medium": "controller.animation.light_source_medium",
+				"light_source_low": "controller.animation.light_source_low",
+				"no_light_source": "controller.animation.no_light_source",
+                "torch": "controller.animation.torch",
+                "attack": "controller.animation.attack"
+                
+			}
+		},
+        
+/////////////////////////////////////
+        
+		"component_groups": {
+            
+                    // Added
+           "effect:large_slime_damage": {
+            "minecraft:spell_effects": {
+             "add_effects": [
+              {
+               "effect": "slowness",
+               "duration": 12,
+               "amplifier": 2,
+               "display_on_screen_animation": false
+              }
+             ]
+            }
+           },
+           // Added
+           "effect:medium_slime_damage": {
+            "minecraft:spell_effects": {
+             "add_effects": [
+              {
+               "effect": "slowness",
+               "duration": 8,
+               "amplifier": 1,
+               "display_on_screen_animation": false
+              }
+             ]
+            }
+           },
+           // Added
+           "effect:small_slime_damage": {
+            "minecraft:spell_effects": {
+             "add_effects": [
+              {
+               "effect": "slowness",
+               "duration": 4,
+               "amplifier": 0,
+               "display_on_screen_animation": false
+              }
+             ]
+            }
+           },
+          // Added
+           "effect:drowned_damage": {
+            "minecraft:spell_effects": {
+             "add_effects": [
+              {
+               "effect": "weakness",
+               "duration": 4,
+               "amplifier": 0, // = level 1 weakness
+               "display_on_screen_animation": false
+              },
+              {
+               "effect": "slowness",
+               "duration": 4,
+               "amplifier": 0, // = level 1 weakness
+               "display_on_screen_animation": false
+              }
+             ]
+            }
+           },
+          // Added
+           "effect:husk_damage": {
+            "minecraft:spell_effects": {
+             "add_effects": [
+              {
+               "effect": "hunger",
+               "duration": 30,
+               "amplifier": 0,
+               "display_on_screen_animation": false
+              }
+             ]
+            }
+           },
+            
+            "minecraft:add_bad_omen": {
+            "minecraft:spell_effects": {
+              "add_effects": [
+                {
+                  "effect": "bad_omen",
+                  "duration": 6000,
+                  "display_on_screen_animation": true
+                }
+              ]
+            },
+            "minecraft:timer": {
+              "time": [ 0.0, 0.0 ],
+              "looping": false,
+              "time_down_event": {
+                "event": "minecraft:clear_add_bad_omen",
+                "target": "self"
+              }
+            }
+        },
+          "minecraft:clear_bad_omen_spell_effect": {
+            "minecraft:spell_effects": {
+            }
+          },
+          "minecraft:raid_trigger": {
+            "minecraft:raid_trigger": {
+              "triggered_event": {
+                "event": "minecraft:remove_raid_trigger",
+                "target": "self"
+              }
+            },
+            "minecraft:spell_effects": {
+              "remove_effects": "bad_omen"
+            }
+        },
+        // ---- Standard player's caracteristics ----    	
+        "minecraft:standard_player": {
+            "minecraft:health": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:movement": {
+                "value": 0.1
+            },
+            "minecraft:attack": {
+                "damage": 1
+            }
+        },
+
+        // ---- Stick on hand = +1 damages ----
+        "minecraft:stick": {
+            "minecraft:attack": {
+                "damage": 3
+            }
+        },
+        // ---- Blaze Rod on hand = +2 damages ----
+        "minecraft:blaze_rod": {
+            "minecraft:mark_variant": {
+                "value": 1
+            },
+            "minecraft:attack": {
+                "damage": 4
+            }
+        },
+        // ---- Flint on hand = up to +3 damages ----
+        "minecraft:flint": {
+            "minecraft:attack": {
+                "damage": [2, 5]
+            }
+        }, 
+        // ---- Mud ball on hand = throw a mud ball to an entity ----
+        "betterbedrock:mud_ball": {
+            "minecraft:mark_variant": {
+                "value": 2
+            }
+        },
+        // ---- Ruby Axe ----
+        "betterbedrock:ruby_axe": {
+            "minecraft:attack": {
+                "damage": [8, 9]
+            }
+        },
+        // ---- Ruby Hoe ----
+        "betterbedrock:ruby_hoe": {
+            "minecraft:attack": {
+                "damage": 5
+            }
+        },
+        // ---- Ruby Pickaxe ----
+        "betterbedrock:ruby_pickaxe": {
+            "minecraft:attack": {
+                "damage": [7, 8]
+            }
+        },
+        // ---- Ruby Shovel ----
+        "betterbedrock:ruby_shovel": {
+            "minecraft:attack": {
+                "damage": [6, 7]
+            }
+        },
+        // ---- Ruby Sword ----
+        "betterbedrock:ruby_sword": {
+            "minecraft:attack": {
+                "damage": [9, 10]
+            }
+        },
+            
+        // ---- Copper Axe ----
+        "betterbedrock:copper_axe": {
+            "minecraft:attack": {
+                "damage": 7
+            }
+        },
+        // ---- Copper Hoe ----
+        "betterbedrock:copper_hoe": {
+            "minecraft:attack": {
+                "damage": 4
+            }
+        },
+        // ---- Copper Pickaxe ----
+        "betterbedrock:copper_pickaxe": {
+            "minecraft:attack": {
+                "damage": 6
+            }
+        },
+        // ---- Copper Shovel ----
+        "betterbedrock:copper_shovel": {
+            "minecraft:attack": {
+                "damage": 5
+            }
+        },
+        // ---- Copper Sword ----
+        "betterbedrock:copper_sword": {
+            "minecraft:attack": {
+                "damage": 8
+            }
+        },
+            
+        // Dynamic Light with level 15 light sources (lava...)
+        "minecraft:very_high_light_source": {
+            "minecraft:mark_variant": {
+                "value": 10
+            }
+        },  
+        // Dynamic Light with level 11-14 light sources (torches...)
+        "minecraft:high_light_source": {
+            "minecraft:mark_variant": {
+                "value": 11
+            }
+        },  
+        // Dynamic Light with level 7-10 light sources (redstone torches...)
+        "minecraft:medium_light_source": {
+            "minecraft:mark_variant": {
+                "value": 12
+            }
+        },  
+        // Dynamic Light with level 3-6 light sources (magma block...)
+        "minecraft:low_light_source": {
+            "minecraft:mark_variant": {
+                "value": 13
+            }
+        },
+        // Torch on hand
+        "minecraft:torch": {
+            "minecraft:mark_variant": {
+                "value": 14
+            }
+        },
+        // Dynamic Light with level 3-6 light sources (magma block...)
+        "minecraft:no_light_source": {
+            "minecraft:mark_variant": {
+                "value": 0
+            }
+        }
+            
+    },
+    
+/////////////////////////////////////        
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"player"
+				]
+			},
+            "minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:environment_sensor": [
+                // ---- Reset player ----
+				{
+					"on_environment": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "self",
+									"value": "player"
+								}
+							]
+						},
+						"event": "minecraft:reset_player"
+					}
+				},
+                // ---- For stick ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:stick"
+								}
+							]
+						},
+						"event": "minecraft:holds_stick"
+					}
+				},
+                // ---- For blaze_rod ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:blaze_rod"
+								}
+							]
+						},
+						"event": "minecraft:holds_blaze_rod"
+					}
+				},
+                // ---- For flint ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:flint"
+								}
+							]
+						},
+						"event": "minecraft:holds_flint"
+					}
+				},
+                // ---- Mud ball ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:mud_ball"
+								}
+							]
+						},
+						"event": "minecraft:holds_mud_ball"
+					}
+				},
+                // ---- Ruby Axe ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:ruby_axe"
+								}
+							]
+						},
+						"event": "minecraft:holds_ruby_axe"
+					}
+				},
+                // ---- Ruby Hoe ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:ruby_hoe"
+								}
+							]
+						},
+						"event": "minecraft:holds_ruby_hoe"
+					}
+				},
+                // ---- Ruby Pickaxe ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:ruby_pickaxe"
+								}
+							]
+						},
+						"event": "minecraft:holds_ruby_pickaxe"
+					}
+				},
+                // ---- Ruby Shovel ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:ruby_shovel"
+								}
+							]
+						},
+						"event": "minecraft:holds_ruby_shovel"
+					}
+				},
+                // ---- Ruby Sword ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:ruby_sword"
+								}
+							]
+						},
+						"event": "minecraft:holds_ruby_sword"
+					}
+				},
+                // ---- Copper Axe ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:copper_axe"
+								}
+							]
+						},
+						"event": "minecraft:holds_copper_axe"
+					}
+				},
+                // ---- Copper Hoe ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:copper_hoe"
+								}
+							]
+						},
+						"event": "minecraft:holds_copper_hoe"
+					}
+				},
+                // ---- Copper Pickaxe ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:copper_pickaxe"
+								}
+							]
+						},
+						"event": "minecraft:holds_copper_pickaxe"
+					}
+				},
+                // ---- Copper Shovel ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:copper_shovel"
+								}
+							]
+						},
+						"event": "minecraft:holds_copper_shovel"
+					}
+				},
+                // ---- Copper Sword ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "betterbedrock:copper_sword"
+								}
+							]
+						},
+						"event": "minecraft:holds_copper_sword"
+					}
+				},
+                
+                // ---- For lava dynamic light ----
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:bucket"
+								},
+                                { // For lava bucket
+                                    "test": "is_variant",
+                                    "value": 10
+                                }
+							]
+						},
+						"event": "minecraft:holds_very_high_light_source"
+					}
+				},
+                // ---- For very high light sources ----
+				{
+					"on_environment": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:glowstone"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:lit_pumpkin"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:sealantern"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:lantern"
+								}
+							]
+						},
+						"event": "minecraft:holds_very_high_light_source"
+					}
+				},
+                
+                // ---- For high light sources ----
+				{
+					"on_environment": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:torch"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:end_rod"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:enchanting_table"
+								}
+							]
+						},
+						"event": "minecraft:holds_high_light_source"
+					}
+				},
+                // ---- For medium light sources ----
+				{
+					"on_environment": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:redstone_torch"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:redstone_ore"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:ender_chest"
+								}
+							]
+						},
+						"event": "minecraft:holds_medium_light_source"
+					}
+				},
+                // ---- For low light sources ----
+				{
+					"on_environment": {
+						"filters": {
+							"any_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:glowstone_dust"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:magma"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:dragon_egg"
+								}
+							]
+						},
+						"event": "minecraft:holds_low_light_source"
+					}
+				},
+                {
+					"on_environment": {
+						"filters": {
+							"all_of": [
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "minecraft:torch"
+								}
+							]
+						},
+						"event": "minecraft:holds_torch"
+					}
+				},
+                {
+					"on_environment": {
+						"filters": {
+							"all_of": [
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:bucket"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:glowstone"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:lantern"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:sea_lantern"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:lit_pumpkin"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:torch"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:end_rod"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:enchanting_table"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:redstone_torch"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:redstone_torch"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:redstone_ore"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:ender_chest"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:glowstone_dust"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:magma"
+								},
+                                {
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+                                    "operator": "!=",
+									"value": "minecraft:dragon_egg"
+								}
+							]
+						},
+						"event": "minecraft:holds_no_light_source"
+					}
+				}
+                
+			],
+            "minecraft:damage_sensor": [ // Added
+               { // Large Slimes
+                "on_damage": { 
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "slime_large"
+                        },
+                    "event": "event:large_slime_effect"
+                },
+                "deals_damage": true
+                },
+                { // Medium Slimes
+                "on_damage": { 
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "slime_medium"
+                        },
+                    "event": "event:medium_slime_effect"
+                },
+                "deals_damage": true
+                },
+                { // Small Slimes
+                "on_damage": { 
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "slime_small"
+                        },
+                    "event": "event:small_slime_effect"
+                },
+                "deals_damage": true
+                },
+                { // Drowned
+                "on_damage": {
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "drowned_adult"
+                        },
+                    "event": "event:drowned_effect"
+                },
+                "deals_damage": true
+                },
+                { // Husk
+                "on_damage": {
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "husk_adult"
+                        },
+                    "event": "event:husk_effect"
+                },
+                "deals_damage": true
+                }
+            ],
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": -1,
+				"inhaleTime": 3.75,
+				"generatesBubbles": false
+			},
+			"minecraft:nameable": {
+				"alwaysShow": true,
+				"allowNameTagRenaming": false
+			},
+			"minecraft:physics": {},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.15,
+							0.04
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.15,
+							0.04
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:scaffolding_climber": {}
+            
+		},
+        
+ /////////////////////////////////////       
+        
+        
+		"events": {
+            "minecraft:gain_bad_omen": {
+                "add": {
+                    "component_groups": [
+                    "minecraft:add_bad_omen"
+                ]
+                }
+            },
+            "minecraft:clear_add_bad_omen": {
+                "remove": {
+                "component_groups": [
+                    "minecraft:add_bad_omen"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:clear_bad_omen_spell_effect"
+                    ]
+                }
+            },
+            "minecraft:trigger_raid": {
+                "add": {
+                        "component_groups": [ "minecraft:raid_trigger" ]
+                }
+            },
+            "minecraft:remove_raid_trigger": {
+                "remove": {
+                    "component_groups": [ "minecraft:raid_trigger" ]
+                }
+            },
+            
+            // ---- Added ----
+			"minecraft:holds_stick": {
+				"add": {
+					"component_groups": [
+						"minecraft:stick"
+					]
+				}
+			},
+			"minecraft:holds_blaze_rod": {
+				"add": {
+					"component_groups": [
+						"minecraft:blaze_rod"
+					]
+				}
+			},
+			"minecraft:holds_flint": {
+				"add": {
+					"component_groups": [
+						"minecraft:flint"
+					]
+				}
+			},
+			"minecraft:holds_mud_ball": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:mud_ball"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:reset_player": {
+				"add": {
+					"component_groups": [
+						"minecraft:standard_player"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:stick",
+						"minecraft:blaze_rod",
+						"minecraft:flint",
+						"minecraft:very_high_light_source",
+                        "minecraft:high_light_source",
+                        "minecraft:medium_light_source",
+                        "minecraft:low_light_source",
+                        "minecraft:torch",
+                        "betterbedrock:ruby_axe",
+                        "betterbedrock:ruby_hoe",
+                        "betterbedrock:ruby_pickaxe",
+                        "betterbedrock:ruby_shovel",
+                        "betterbedrock:ruby_sword",
+                        "betterbedrock:copper_axe",
+                        "betterbedrock:copper_hoe",
+                        "betterbedrock:copper_pickaxe",
+                        "betterbedrock:copper_shovel",
+                        "betterbedrock:copper_sword",
+						"betterbedrock:mud_ball"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"minecraft:standard_player"
+					]
+				}
+			},
+            "event:large_slime_effect": { // Added
+                "add": {
+                    "component_groups": [
+                        "effect:large_slime_damage"
+                    ]
+                }
+           },
+           "event:medium_slime_effect": { // Added
+                "add": {
+                    "component_groups": [
+                        "effect:medium_slime_damage"
+                    ]
+                }
+           },
+           "event:small_slime_effect": { // Added
+                "add": {
+                    "component_groups": [
+                        "effect:small_slime_damage"
+                    ]
+                }
+           },
+           "event:drowned_effect": { // Added
+                "add": {
+                    "component_groups": [
+                        "effect:drowned_damage"
+                 ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "effect:drowned_damage"
+                    ]
+                }
+           },
+           "event:husk_effect": { // Added
+                "add": {
+                    "component_groups": [
+                        "effect:husk_damage"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "effect:husk_damage"
+                    ]
+                }
+           },
+            // ---- Added ----
+			"minecraft:holds_very_high_light_source": {
+				"add": {
+					"component_groups": [
+						"minecraft:very_high_light_source"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_high_light_source": {
+				"add": {
+					"component_groups": [
+						"minecraft:high_light_source"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_medium_light_source": {
+				"add": {
+					"component_groups": [
+						"minecraft:medium_light_source"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_low_light_source": {
+				"add": {
+					"component_groups": [
+						"minecraft:low_light_source"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_torch": {
+				"add": {
+					"component_groups": [
+						"minecraft:torch"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_no_light_source": {
+				"add": {
+					"component_groups": [
+						"minecraft:no_light_source"
+					]
+				}
+			},
+            
+            // ---- Added ----
+			"minecraft:holds_ruby_axe": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:ruby_axe"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_ruby_hoe": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:ruby_hoe"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_ruby_pickaxe": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:ruby_pickaxe"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_ruby_shovel": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:ruby_shovel"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_ruby_sword": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:ruby_sword"
+					]
+				}
+			},
+            
+            // ---- Added ----
+			"minecraft:holds_copper_axe": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:copper_axe"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_copper_hoe": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:copper_hoe"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_copper_pickaxe": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:copper_pickaxe"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_copper_shovel": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:copper_shovel"
+					]
+				}
+			},
+            // ---- Added ----
+			"minecraft:holds_copper_sword": {
+				"add": {
+					"component_groups": [
+						"betterbedrock:copper_sword"
+					]
+				}
+			}
+            
+		}
+	}
+}

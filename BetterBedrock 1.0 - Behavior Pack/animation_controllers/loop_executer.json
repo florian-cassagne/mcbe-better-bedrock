@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.loop_executer": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function loop-main",
+						"/function loop-mud_generation",
+						"/function loop-ruby_power",
+						"/function loop-copper_power"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function loop-main",
+						"/function loop-mud_generation",
+						"/function loop-ruby_power",
+						"/function loop-copper_power"
+					]
+				}
+			}
+		}
+	}
+}

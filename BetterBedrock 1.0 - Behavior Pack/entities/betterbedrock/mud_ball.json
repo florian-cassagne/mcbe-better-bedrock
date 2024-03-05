@@ -1,0 +1,45 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:mud_ball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+    
+    },
+
+    "components": {
+        "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+        },
+        "minecraft:projectile": {
+            "onHit": {
+                "impact_damage": {
+                  "damage": [ 0, 1 ],
+                  "knockback": true,
+                  "semirandomdiffdamage": false,
+                  "destroyonhit": true
+                }
+            },
+            "power": 1.2,
+            "gravity": 0.20,
+            "uncertaintyBase": 16,
+            "uncertaintyMultiplier": 4,
+            "anchor": 1,
+            "shouldbounce": true,
+            "offset": [ 0, -0.1, 0 ]
+        },
+        "minecraft:physics": {
+        }
+    },
+
+    "events": {
+        
+    }
+
+  }
+}

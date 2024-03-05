@@ -1,0 +1,18 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "underground_stalagmite_feature"
+    },
+    "count": 9,
+    "places_block": "minecraft:ice",
+    "may_replace": [
+      {
+        "name": "minecraft:stone",
+        "states": {
+          "stone_type": "stone"
+        }
+      }
+    ]
+  }
+}

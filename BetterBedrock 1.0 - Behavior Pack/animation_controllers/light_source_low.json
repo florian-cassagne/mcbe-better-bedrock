@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.light_source_low": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function item-light_low"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "(query.mark_variant == 13)"
+						}
+					],
+					"on_entry": [
+						"/function item-light_low"
+					]
+				}
+			}
+		}
+	}
+}

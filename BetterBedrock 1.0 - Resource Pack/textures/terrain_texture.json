@@ -1,0 +1,38 @@
+
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+          
+        "ruby_block": {
+          "textures": "textures/blocks/ruby_block"
+        },
+        "ruby_ore": {
+          "textures": "textures/blocks/ruby_ore"
+        },
+        "copper_block": {
+          "textures": "textures/blocks/copper_block"
+        },
+        "copper_ore": {
+          "textures": "textures/blocks/copper_ore"
+        },
+        "nether_gold_ore": {
+          "textures": "textures/blocks/nether_gold_ore"
+        },
+        "mud_block": {
+          "textures": "textures/blocks/mud_block_anim"
+        },
+        "quicksand": {
+          "textures": "textures/blocks/quicksand_anim"
+        },
+        "hardstone": {
+          "textures": "textures/blocks/hardstone"
+        },
+        "spiky_block_side": {
+          "textures": "textures/blocks/spiky_block_side"
+        },
+        "spiky_block_top": {
+          "textures": "textures/blocks/spiky_block_top"
+        }
+    }
+}

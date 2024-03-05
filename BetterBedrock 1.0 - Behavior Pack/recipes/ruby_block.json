@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "betterbedrock:ruby_block"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "betterbedrock:ruby"
+      }
+    },
+    "result": {
+      "item": "betterbedrock:ruby_block"
+    }
+  }
+}

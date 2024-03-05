@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "minecraft:horsearmorgold"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  #",
+      "#O#",
+      "# #"
+    ],
+    "key": {
+      "O": {
+        "item": "minecraft:wool"
+      },
+      "#": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "minecraft:horsearmorgold",
+      "count": 1
+    }
+  }
+}

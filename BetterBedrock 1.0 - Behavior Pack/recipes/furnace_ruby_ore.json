@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "betterbedrock:furnace_ruby_ore"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace"],
+    "input": "betterbedrock:ruby_ore",
+    "output": "betterbedrock:ruby"
+  }
+  
+}

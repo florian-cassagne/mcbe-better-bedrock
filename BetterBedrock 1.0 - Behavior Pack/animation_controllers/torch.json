@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.torch": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function item-torch"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "(query.mark_variant == 14)"
+						}
+					],
+					"on_entry": [
+						"/function item-torch"
+					]
+				}
+			}
+		}
+	}
+}

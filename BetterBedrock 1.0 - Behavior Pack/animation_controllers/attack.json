@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+   "animation_controllers": {
+    "controller.animation.attacking": {
+  	  "initial_state" : "attacking",
+      "states": {
+        "attacking": {
+          "transitions": [
+            { 
+               "attacking_with_blaze_rod": "(variable.attack_time) && (query.mark_variant == 1)" 
+            }
+          ]
+        },
+        "attacking_with_blaze_rod": {
+          "on_entry": [
+            "/function item-blaze_rod"
+          ],
+          "transitions": [
+            { 
+               "attacking": "!variable.attack_time" 
+            }
+          ]
+        }
+      }
+    }
+  }
+}

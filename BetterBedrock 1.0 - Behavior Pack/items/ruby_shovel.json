@@ -1,0 +1,16 @@
+/*
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "betterbedrock:ruby_shovel"
+    },
+
+    "components": {
+        "minecraft:max_stack_size": 1,
+        "minecraft:max_damage": 1250,
+        "minecraft:hand_equipped": true
+    }
+  }
+}
+*/

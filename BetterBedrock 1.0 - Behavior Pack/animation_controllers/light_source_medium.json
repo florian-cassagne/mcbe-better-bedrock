@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.light_source_medium": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function item-light_medium"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "(query.mark_variant == 12)"
+						}
+					],
+					"on_entry": [
+						"/function item-light_medium"
+					]
+				}
+			}
+		}
+	}
+}

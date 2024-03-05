@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.light_source_very_high": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function item-light_very_high"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "(query.mark_variant == 10)"
+						}
+					],
+					"on_entry": [
+						"/function item-light_very_high"
+					]
+				}
+			}
+		}
+	}
+}

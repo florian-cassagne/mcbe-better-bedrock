@@ -1,0 +1,73 @@
+//bridge-file-version: #0
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"ruby": {
+			"textures": "textures/items/ruby"
+		},
+		"ruby_sword": {
+			"textures": "textures/items/ruby_sword"
+		},
+		"ruby_pickaxe": {
+			"textures": "textures/items/ruby_pickaxe"
+		},
+		"ruby_axe": {
+			"textures": "textures/items/ruby_axe"
+		},
+		"ruby_shovel": {
+			"textures": "textures/items/ruby_shovel"
+		},
+		"ruby_hoe": {
+			"textures": "textures/items/ruby_hoe"
+		},
+		"copper_ingot": {
+			"textures": "textures/items/copper_ingot_v2"
+		},
+		"copper_nugget": {
+			"textures": "textures/items/copper_nugget"
+		},
+		"copper_sword": {
+			"textures": "textures/items/copper_sword"
+		},
+		"copper_pickaxe": {
+			"textures": "textures/items/copper_pickaxe"
+		},
+		"copper_axe": {
+			"textures": "textures/items/copper_axe"
+		},
+		"copper_shovel": {
+			"textures": "textures/items/copper_shovel"
+		},
+		"copper_hoe": {
+			"textures": "textures/items/copper_hoe"
+		},
+		"mud_ball": {
+			"textures": "textures/items/mud_ball"
+		},
+		"arrow_spell_lvl1": {
+			"textures": "textures/items/arrow_spell_lvl1"
+		},
+		"arrow_spell_lvl2": {
+			"textures": "textures/items/arrow_spell_lvl2"
+		},
+		"arrow_spell_lvl3": {
+			"textures": "textures/items/arrow_spell_lvl3"
+		},
+		"arrow_spell_lvl4": {
+			"textures": "textures/items/arrow_spell_lvl4"
+		},
+		"freeze_spell_lvl1": {
+			"textures": "textures/items/freeze_spell_lvl1"
+		},
+		"freeze_spell_lvl2": {
+			"textures": "textures/items/freeze_spell_lvl2"
+		},
+		"freeze_spell_lvl3": {
+			"textures": "textures/items/freeze_spell_lvl3"
+		},
+		"freeze_spell_lvl4": {
+			"textures": "textures/items/freeze_spell_lvl4"
+		}
+	}
+}

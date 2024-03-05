@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "betterbedrock:mud_block"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "##",
+      "##"
+    ],
+    "key": {
+      "#": {
+        "item": "betterbedrock:mud_ball"
+      }
+    },
+    "result": {
+      "item": "betterbedrock:mud_block"
+    }
+  }
+}

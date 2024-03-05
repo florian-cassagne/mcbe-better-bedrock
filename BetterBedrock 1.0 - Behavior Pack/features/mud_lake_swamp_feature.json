@@ -1,0 +1,18 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "mud_lake_swamp_feature"
+    },
+    "count": 36,
+    "places_block": "betterbedrock:mud_block",
+    "may_replace": [
+      {
+        "name": "minecraft:dirt",
+        "states": {
+          "dirt_type": "normal"
+        }
+      }
+    ]
+  }
+}

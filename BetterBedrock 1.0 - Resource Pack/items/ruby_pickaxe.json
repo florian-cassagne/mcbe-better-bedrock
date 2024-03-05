@@ -1,0 +1,14 @@
+
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "betterbedrock:ruby_pickaxe",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "ruby_pickaxe",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "Changelog : Balanced Mobs and Ruby added !",
+        "name": "BetterBedrock BP - 1.0",
+        "uuid": "bbb7a7b1-a5ef-4759-9ec4-009b10bf5d10",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 12, 0]
+    },
+    "modules": [
+        {
+            "description": "BetterBedrock BP - 1.0",
+            "type": "data",
+            "uuid": "b663dc4d-a576-4f07-8a81-a93cd004f0c4",
+            "version": [1, 0, 0]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "8fd08483-4536-424c-b698-5bbbb020a7a9",
+            "version": [1, 0, 0]
+        }
+    ]
+}

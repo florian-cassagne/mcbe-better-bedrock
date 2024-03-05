@@ -1,0 +1,20 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "betterbedrock:mud_ball_from_block"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "betterbedrock:mud_block"
+      }
+    ],
+    "result": {
+      "item": "betterbedrock:mud_ball",
+      "count": 4
+    }
+  }
+}

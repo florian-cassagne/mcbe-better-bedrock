@@ -1,0 +1,37 @@
+//bridge-file-version: #3
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "betterbedrock:tarantula",
+			"materials": {
+				"default": "spider",
+				"invisible": "spider_invisible"
+			},
+			"textures": {
+				"default": "textures/entity/spider/tarantula"
+			},
+			"geometry": {
+				"default": "geometry.spider"
+			},
+			"animations": {
+				"default_leg_pose": "animation.spider.default_leg_pose",
+				"look_at_target": "animation.spider.look_at_target",
+				"walk": "animation.spider.walk"
+			},
+			"animation_controllers": [
+				{
+					"move": "controller.animation.spider.move"
+				}
+			],
+			"render_controllers": [
+				"controller.render.spider"
+			],
+			"spawn_egg": {
+				"base_color": "#221F1F",
+				"overlay_color": "#7A1581",
+				"texture_index": 1
+			}
+		}
+	}
+}

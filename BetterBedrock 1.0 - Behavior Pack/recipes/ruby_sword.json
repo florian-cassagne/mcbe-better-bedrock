@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "betterbedrock:ruby_sword"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "#",
+      "/"
+    ],
+    "key": {
+      "#": {
+        "item": "betterbedrock:ruby"
+      },
+      "/": {
+        "item": "minecraft:stick"
+      }  
+    },
+    "result": {
+      "item": "betterbedrock:ruby_sword"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+
+{
+  "format_version": "1.12",
+  "minecraft:item": {
+    "description": {
+      "identifier": "betterbedrock:ruby_shovel",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "ruby_shovel",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

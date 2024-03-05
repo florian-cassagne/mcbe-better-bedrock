@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "betterbedrock:copper_sword"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "#",
+      "/"
+    ],
+    "key": {
+      "#": {
+        "item": "betterbedrock:copper_ingot"
+      },
+      "/": {
+        "item": "minecraft:stick"
+      }  
+    },
+    "result": {
+      "item": "betterbedrock:copper_sword"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.angry": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+                        "/function mob-tarantula-attacking"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "query.is_saddled"
+						}
+					],
+					"on_entry": [
+                        "/function mob-tarantula-attacking"
+					]
+				}
+			}
+		}
+	}
+}

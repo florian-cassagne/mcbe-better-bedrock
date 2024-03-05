@@ -1,0 +1,18 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "quicksand_feature"
+    },
+    "count": 25,
+    "places_block": "betterbedrock:quicksand",
+    "may_replace": [
+      {
+        "name": "minecraft:sand",
+          "states": {
+          "sand_type": "normal"
+        }
+      }
+    ]
+  }
+}
